@@ -1,0 +1,28 @@
+import turtle
+bob = turtle.Turtle()
+turtle.speed(100)
+
+# I played around a lot with turtle - good fun.
+# I created the below function interesting_curve by playing around with the parameters for
+# the Koch curve. I think it's quite nice.
+
+def interesting_curve(t, length, n): 
+    if n == 0: 
+        return
+    angle = 60
+    t.fd(length*n)
+    t.lt(angle)
+    interesting_curve(t, length, n-1)
+    t.rt(2*angle)
+    interesting_curve(t, length, n-1)
+    t.lt(angle)
+    t.bk(length*n) 
+
+
+bob.pu()
+bob.goto(-100, -100)
+bob.pd()
+
+interesting_curve(bob, 10, 20)
+
+turtle.mainloop()
