@@ -1,6 +1,6 @@
-import turtle as ts
-bob = ts.Turtle()
-ts.speed(0)
+import turtle
+bob = turtle.Turtle()
+bob.speed(0)
 
 # I played around a lot with turtle - good fun.
 # I created the below function interesting_curve by playing around with the parameters for
@@ -10,13 +10,13 @@ def interesting_curve(t, length, n):
     if n == 0: 
         return
     angle = 60
-    ts.fd(length*n)
-    ts.lt(angle)
+    t.fd(length*n)
+    t.lt(angle)
     interesting_curve(t, length, n-1)
-    ts.rt(2*angle)
+    t.rt(2*angle)
     interesting_curve(t, length, n-1)
-    ts.lt(angle)
-    ts.bk(length*n) 
+    t.lt(angle)
+    t.bk(length*n) 
 
 bob.pu()
 bob.goto(-100, -100)
@@ -24,4 +24,4 @@ bob.pd()
 
 interesting_curve(bob, 10, 20)
 
-turtle.mainloop()
+ts.mainloop()
